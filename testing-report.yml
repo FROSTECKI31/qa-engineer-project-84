@@ -14,3 +14,27 @@
 - summary: |
     Просмотр товаров которых нет в наличии
   status: fail
+
+- summary: |
+    Проверка фильтрации товаров по цене
+  status: pass   
+
+- summary: |
+    Проверка фильтрации товаров по бренду
+  status: pass  
+
+- summary: |
+    Поиск товаров по ключевым словам
+  status: fail
+
+- summary: |
+    Очистка корзины
+  status: pass
+
+- summary: |
+    Изменения языка интерфейса
+  status: pass
+
+- summary: |
+    Совместимость с разными браузерами.
+  status: pass
