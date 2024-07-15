@@ -1,7 +1,47 @@
 ---
 test-cases:
   - summary: |
-      Просмотр товаров которых нет в нали
+      Добавление товаров в корзину и просмотр содержимое корзины
+    status: pass
+    
+test-cases:
+  - summary: |
+      Выборочная очистка товаров добавленные в корзину
+    status: pass
+
+test-cases:
+  - summary: |
+      Просмотр товаров которых нет в наличии
+    status: fail
+
+test-cases:
+  - summary: |
+      Проверка фильтрации товаров по цене
+    status: pass
+
+test-cases:
+  - summary: |
+      Проверка фильтрации товаров по бренду
+    status: pass
+
+test-cases:
+  - summary: |
+      Поиск товаров по ключевым словам
+    status: fail
+
+test-cases:
+  - summary: |
+      Очистка корзины
+    status: pass
+
+test-cases:
+  - summary: |
+      Изменения языка интерфейса
+    status: pass
+
+test-cases:
+  - summary: |
+      Совместимость с разными браузерами.
     status: pass
     
 bugreports:
@@ -32,7 +72,6 @@ bugreports:
   actual-result: |
     Выводится весь список товаров в независимости от ценовой категории. 
 
-bugreports:
 - summary: |
     При выборе определенной категории и кнопки производитель, товар не фильтруется должным образом и показывает производителя из другой категории
   environment: |
