@@ -4,42 +4,34 @@ test-cases:
       Добавление товаров в корзину и просмотр содержимое корзины
     status: pass
     
-test-cases:
   - summary: |
       Выборочная очистка товаров добавленные в корзину
     status: pass
 
-test-cases:
   - summary: |
       Просмотр товаров которых нет в наличии
     status: fail
 
-test-cases:
   - summary: |
       Проверка фильтрации товаров по цене
     status: pass
 
-test-cases:
   - summary: |
       Проверка фильтрации товаров по бренду
     status: pass
 
-test-cases:
   - summary: |
       Поиск товаров по ключевым словам
     status: fail
 
-test-cases:
   - summary: |
       Очистка корзины
     status: pass
 
-test-cases:
   - summary: |
       Изменения языка интерфейса
     status: pass
 
-test-cases:
   - summary: |
       Совместимость с разными браузерами.
     status: pass
@@ -58,7 +50,6 @@ bugreports:
   actual-result: |
     Кнопка "Next" исчезает, но если быстро продублировать нажатие этой кнопки, то открывается третья страница магазина, где есть возможность перейти на четвертую страницу.
 
-bugreports:
 - summary: |
     В фильтре "Цена", при написании значения 0.### (положительное число), список товара не фильтруется
   environment: |
