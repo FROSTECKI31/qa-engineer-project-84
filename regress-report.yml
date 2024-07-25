@@ -14,7 +14,7 @@ test-cases:
 
   - summary: |
       Проверка фильтрации товаров по цене
-    status: pass
+    status: fail
 
   - summary: |
       Проверка фильтрации товаров по бренду
@@ -30,12 +30,32 @@ test-cases:
 
   - summary: |
       Изменения языка интерфейса
-    status: pass
+    status: fail
 
   - summary: |
       Совместимость с разными браузерами.
     status: pass
-    
+
+- summary: |
+    Проверка успешной покупки товара в магазине.
+  status: pass
+
+- summary: |
+    Навигация по страницам каталога, переход между страницами магазина.
+  status: fail
+
+- summary: |
+    Выбор категории товаров на странице магазина
+  status: pass
+
+- summary: |
+    Проверка запросов Devtools
+  status: fail
+
+- summary: |
+    Проверка отображения и функциональности сайта на мобильных устройствах через ПК.
+  status: fail
+  
 bugreports:
  - summary: |
     При переходе на вторую страницу исчезает кнопка "Next", что не дает возможность просмотреть товар полностью
@@ -66,7 +86,7 @@ bugreports:
 - summary: |
     При выборе определенной категории и кнопки производитель, товар не фильтруется должным образом и показывает производителя из другой категории
   environment: |
-     Yandex browser   24.6.1.766 (Официальная сборка) (64 бит)
+    Yandex browser   24.6.1.766 (Официальная сборка) (64 бит)
     ОС Windows 10
   steps-to-reproduce: |
     1. Зайти на страницу магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
@@ -76,4 +96,23 @@ bugreports:
     Должен выводиться товар только тех производители, которых мы выбрали. Если отсутсвует данный производитель в списке товаров, но страница должна быть пуста
   actual-result: |
     Выводится весь список товаров в независимости от выбранных производителей и категории.
-    
+
+- summary: |
+    При проверки сайта в консоли Devtools JavaScpirt появляются ошибки "Uncaught TypeErorr, ReferenceError, NetworkError" 
+  environment: |
+    Yandex browser   24.6.1.766 (Официальная сборка) (64 бит)
+    ОС Windows 10
+  steps-to-reproduce: |
+    1. Зайти на страницу магазина https://products-store-git-v2bugfixes-hexlet-components.vercel.app/
+    2. Нажать F12 для открытия инструментов разработчика.
+    4. Перейти на вкладку "Console".
+    5. Обновить страницу, нажав F5.
+    6. Отследить все ошибки, отображаемые в консоли.
+    7. Перейти на разные страницы сайта (главная, страницы продуктов, корзина) и повторить шаги 5-6.
+  expected-result: |
+    В консоли не должно быть ошибок JavaScript. Сайт должен корректно загружаться и работать на всех страницах.
+  actual-result: |
+    Выводятся сообщения с ошибками:
+    1. Uncaught TypeError: Cannot read property 'xyz' of undefined
+    2. ReferenceError: Uncaught ReferenceError: xyz is not defined
+    3. NetworkError:  Failed to load resource: the server responded with a status of 404 (Not Found)
